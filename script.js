@@ -72,4 +72,5 @@ function game(numberOfRounds) {
     }
 }
 
-game(5);
+noOfRounds = parseInt(prompt("Welcome to the Rock Paper Scissors game. Please enter the number of rounds you want to play: ", "3"));
+game(noOfRounds);
