@@ -44,6 +44,9 @@ function playRound(playerSelection, computerSelection){
             playerScore += 1;
             return "You win! Scissors beat Paper.";
         }
+    } else {
+        computerScore += 1;
+        console.log("You lose! Your choice is invalid.")
     }
 }
 
@@ -56,7 +59,7 @@ function game(numberOfRounds) {
         let computerChoice = getComputerChoice();
         console.log(playerChoice, computerChoice);
         playRound(playerChoice, computerChoice);
-        let currentScore = `Current score: Player ${playerScore} : ${computerScore} Computer`
+        let currentScore = `Score: Player ${playerScore} - ${computerScore} Computer`
         console.log(currentScore);
     }
 
