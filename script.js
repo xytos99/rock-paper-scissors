@@ -10,11 +10,6 @@ function getComputerChoice() {
     return randomElement;
 }
 
-let computerSelection = getComputerChoice();
-// console.log(computerSelection);
-
-let playerSelection = "scissors";
-
 // Play a round
 
 function playRound(playerSelection, computerSelection){
@@ -44,13 +39,14 @@ function playRound(playerSelection, computerSelection){
             playerScore += 1;
             return "You win! Scissors beat Paper.";
         }
+    // If input is an invalid choice, computer scores
     } else {
         computerScore += 1;
         console.log("You lose! Your choice is invalid.")
     }
 }
 
-// console.log(playRound(playerSelection, computerSelection));
+// Play a game of one or more rounds
 
 function game(numberOfRounds) {
 
@@ -59,10 +55,12 @@ function game(numberOfRounds) {
         let computerChoice = getComputerChoice();
         console.log(playerChoice, computerChoice);
         playRound(playerChoice, computerChoice);
+        // Show the current score
         let currentScore = `Score: Player ${playerScore} - ${computerScore} Computer`
         console.log(currentScore);
     }
 
+    // Declare the result
     if (playerScore > computerScore) {
         console.log("You WIN! Congratulations!");
     } else if (playerScore < computerScore) {
@@ -72,5 +70,6 @@ function game(numberOfRounds) {
     }
 }
 
+// Get the number of rounds to be played
 noOfRounds = parseInt(prompt("Welcome to the Rock Paper Scissors game. Please enter the number of rounds you want to play: ", "3"));
 game(noOfRounds);
