@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection){
     // If input is an invalid choice, computer scores
     } else {
         computerScore += 1;
-        console.log("You lose! Your choice is invalid.")
+        console.log("You lose! Your choice is invalid.");
     }
 }
 
@@ -56,7 +56,8 @@ function game(numberOfRounds) {
         console.log(playerChoice, computerChoice);
         playRound(playerChoice, computerChoice);
         // Show the current score
-        let currentScore = `Score: Player ${playerScore} - ${computerScore} Computer`
+        let currentScore = 
+        `Score: Player ${playerScore} - ${computerScore} Computer`;
         console.log(currentScore);
     }
 
@@ -71,5 +72,7 @@ function game(numberOfRounds) {
 }
 
 // Get the number of rounds to be played
-noOfRounds = parseInt(prompt("Welcome to the Rock Paper Scissors game. Please enter the number of rounds you want to play: ", "3"));
+noOfRounds = parseInt(prompt(`Welcome to the Rock Paper Scissors game. 
+                            Please enter the number of rounds you want to 
+                            play: `, "3"));
 game(noOfRounds);
