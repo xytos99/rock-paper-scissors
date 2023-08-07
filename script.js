@@ -45,3 +45,15 @@ function playRound(playerSelection, computerSelection){
         console.log("You lose! Your choice is invalid.");
     }
 }
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    let playerChoice = button.getAttribute('class');
+    let computerChoice = getComputerChoice();
+    console.log(`P: ${playerChoice}, CPU: ${computerChoice}`);
+    let result = playRound(playerChoice, computerChoice);
+    console.log(result);
+  });
+});
