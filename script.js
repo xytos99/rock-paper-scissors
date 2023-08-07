@@ -45,34 +45,3 @@ function playRound(playerSelection, computerSelection){
         console.log("You lose! Your choice is invalid.");
     }
 }
-
-// Play a game of one or more rounds
-
-function game(numberOfRounds) {
-
-    for (let i = 0; i < numberOfRounds; i++) {
-        let playerChoice = prompt("Please enter your choice: ").toLowerCase();
-        let computerChoice = getComputerChoice();
-        console.log(playerChoice, computerChoice);
-        playRound(playerChoice, computerChoice);
-        // Show the current score
-        let currentScore = 
-        `Score: Player ${playerScore} - ${computerScore} Computer`;
-        console.log(currentScore);
-    }
-
-    // Declare the result
-    if (playerScore > computerScore) {
-        console.log("You WIN! Congratulations!");
-    } else if (playerScore < computerScore) {
-        console.log("You LOSE! Better luck next time!");
-    } else {
-        console.log("It's a TIE!");
-    }
-}
-
-// Get the number of rounds to be played
-noOfRounds = parseInt(prompt(`Welcome to the Rock Paper Scissors game. 
-                            Please enter the number of rounds you want to 
-                            play: `, "3"));
-game(noOfRounds);
