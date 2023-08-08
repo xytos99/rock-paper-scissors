@@ -56,9 +56,7 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     let playerChoice = button.getAttribute('class');
     let computerChoice = getComputerChoice();
-    console.log(`P: ${playerChoice}, CPU: ${computerChoice}`);
     let result = playRound(playerChoice, computerChoice);
-    console.log(result);
     scoreDiv.textContent = 
     `Player ${playerScore}:${computerScore} CPU`;
     resultDiv.textContent = getResult(playerScore, computerScore);
