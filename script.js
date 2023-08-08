@@ -48,10 +48,10 @@ function playRound(playerSelection, computerSelection){
 
 function getResult(playerScore, computerScore) {
   if (playerScore === 5) {
-    return 'You win!';
+    return 'You win! Please refresh the page to play again.';
   }
   else if (computerScore === 5) {
-    return 'Computer wins.';
+    return 'Computer wins. Please refresh the page to play again.';
   }
   else {
     return;
