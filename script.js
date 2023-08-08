@@ -79,5 +79,6 @@ buttons.forEach((button) => {
     console.log(result);
     scoreDiv.textContent = 
     `Player ${playerScore}:${computerScore} CPU`;
+    resultDiv.textContent = getResult(playerScore, computerScore);
   });
 });
