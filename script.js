@@ -14,7 +14,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection){
   if (playerSelection === computerSelection) {
-    return "It's a tie!";
+    return `You chose ${playerSelection} and the computer chose ${computerSelection}. It's a tie!`;
   } else if ((playerSelection === 'rock' && computerSelection === 'scissors') 
           || (playerSelection === 'paper' && computerSelection === 'rock')
           || (playerSelection === 'scissors' && computerSelection === 'paper')) {
@@ -49,6 +49,10 @@ scoreDiv.style.margin = '16px 0px';
 const bod = document.querySelector('body');
 bod.appendChild(scoreDiv);
 
+const choicesDiv = document.createElement('div');
+choicesDiv.style.margin = '16px 0px';
+bod.appendChild(choicesDiv);
+
 const resultDiv = document.createElement('div');
 bod.appendChild(resultDiv);
 
@@ -57,6 +61,7 @@ buttons.forEach((button) => {
     let playerChoice = button.getAttribute('class');
     let computerChoice = getComputerChoice();
     let result = playRound(playerChoice, computerChoice);
+    choicesDiv.textContent = result;
     scoreDiv.textContent = 
     `Player ${playerScore}:${computerScore} CPU`;
     resultDiv.textContent = getResult(playerScore, computerScore);
