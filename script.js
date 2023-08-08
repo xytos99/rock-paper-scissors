@@ -62,5 +62,7 @@ buttons.forEach((button) => {
     console.log(`P: ${playerChoice}, CPU: ${computerChoice}`);
     let result = playRound(playerChoice, computerChoice);
     console.log(result);
+    scoreDiv.textContent = 
+    `Player ${playerScore}:${computerScore} CPU`;
   });
 });
