@@ -13,37 +13,17 @@ function getComputerChoice() {
 // Play a round
 
 function playRound(playerSelection, computerSelection){
-    if (playerSelection === computerSelection) {
-        return "It's a tie!";
-    } else if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
-            computerScore += 1;
-            return "You lose! Paper beats Rock.";
-        } else {
-            playerScore += 1;
-            return "You win! Rock beats Scissors.";
-        }
-    } else if (playerSelection === "paper") {
-        if (computerSelection === "scissors") {
-            computerScore += 1;
-            return "You lose! Scissors beat Paper.";
-        } else {
-            playerScore += 1;
-            return "You win! Paper beats rock.";
-        }
-    } else if (playerSelection === "scissors") {
-        if (computerSelection === "rock") {
-            computerScore += 1;
-            return "You lose! Rock beats Scissors.";
-        } else {
-            playerScore += 1;
-            return "You win! Scissors beat Paper.";
-        }
-    // If input is an invalid choice, computer scores
-    } else {
-        computerScore += 1;
-        console.log("You lose! Your choice is invalid.");
-    }
+  if (playerSelection === computerSelection) {
+    return "It's a tie!";
+  } else if ((playerSelection === 'rock' && computerSelection === 'scissors') 
+          || (playerSelection === 'paper' && computerSelection === 'rock')
+          || (playerSelection === 'scissors' && computerSelection === 'paper')) {
+      playerScore +=1;
+      return `You chose ${playerSelection} and the computer chose ${computerSelection}. You win!`;
+  } else {
+      computerScore += 1;
+      return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost.`;
+  }
 }
 
 function getResult(playerScore, computerScore) {
