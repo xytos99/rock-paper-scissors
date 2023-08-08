@@ -48,9 +48,11 @@ function playRound(playerSelection, computerSelection){
 
 function getResult(playerScore, computerScore) {
   if (playerScore === 5) {
+    buttons.forEach((button) => button.disabled = true);
     return 'You win! Please refresh the page to play again.';
   }
   else if (computerScore === 5) {
+    buttons.forEach((button) => button.disabled = true);
     return 'Computer wins. Please refresh the page to play again.';
   }
   else {
