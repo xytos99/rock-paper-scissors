@@ -48,6 +48,13 @@ function playRound(playerSelection, computerSelection){
 
 const buttons = document.querySelectorAll("button");
 
+const scoreDiv = document.createElement('div');
+scoreDiv.textContent = `Player ${playerScore}:${computerScore} CPU`;
+scoreDiv.style.margin = '16px 0px';
+
+const bod = document.querySelector('body');
+bod.appendChild(scoreDiv);
+
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     let playerChoice = button.getAttribute('class');
