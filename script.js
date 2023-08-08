@@ -46,6 +46,18 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+function getResult(playerScore, computerScore) {
+  if (playerScore === 5) {
+    return 'You win!';
+  }
+  else if (computerScore === 5) {
+    return 'Computer wins.';
+  }
+  else {
+    return;
+  };
+}
+
 const buttons = document.querySelectorAll("button");
 
 const scoreDiv = document.createElement('div');
