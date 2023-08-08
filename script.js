@@ -67,6 +67,9 @@ scoreDiv.style.margin = '16px 0px';
 const bod = document.querySelector('body');
 bod.appendChild(scoreDiv);
 
+const resultDiv = document.createElement('div');
+bod.appendChild(resultDiv);
+
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     let playerChoice = button.getAttribute('class');
